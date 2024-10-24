@@ -13,6 +13,6 @@ kind: Kustomization
 namePrefix: prod-
 images:
 - name: ce82210669acr.azurecr.io/82210669
-  newTag: "lastest"
+  newTag: "latest"
 - name: cepgstapacr.azurecr.io/82210669
-  newTag: "lastest"
+  newTag: "latest"
