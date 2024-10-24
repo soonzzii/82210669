@@ -1,7 +1,7 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "82161846"
+  name: "82210669"
 spec:
   replicas: 1
   selector:
@@ -13,7 +13,7 @@ spec:
         app: "82210669"
     spec:
       containers:
-        - name: "82161846" 
+        - name: "82210669" 
           image: ce82210669acr.azurecr.io/82210669
           ports:
           - containerPort: 8080
