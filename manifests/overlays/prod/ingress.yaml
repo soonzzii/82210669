@@ -1,19 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-app-ingress
-  namespace: production
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: 8221069-ingress
+  namespace: "82210669"
 spec:
+  ingressClassName: nginx
   rules:
-    - host: myapp.example.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: my-app-service
-                port:
-                  number: 80
+  - host: "prod.ce-82210669-sa.kubepia.net"
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: prod-my-82210669
+            port:
+              number: 8080
+        pathType: Prefix
