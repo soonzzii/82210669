@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: 82210669-ingress
+  namespace: "82210669-argocd"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "prod.ce-82210669-sa.kubepia.net"
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: my-82210669
+            port:
+              number: 8080
+        pathType: Prefix
