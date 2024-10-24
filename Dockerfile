@@ -1,7 +1,12 @@
+# FROM bellsoft/liberica-openjdk-alpine:17
 FROM cepgbaseacr.azurecr.io/docker.io/openjdk:17-slim
 
-WORKDIR /app
+VOLUME /tmp
 
-COPY target/*.jar app.jar
+ARG JAR_FILE=target/*.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY ${JAR_FILE} app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","/app.jar"]
