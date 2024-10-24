@@ -2,6 +2,7 @@ apiVersion : apps/v1
 kind: Deployment
 metadata:
   name: "82210669"
+  namespace: "82210669-argocd"
 spec:
   replicas: 1
   selector:
