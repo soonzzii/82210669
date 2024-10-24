@@ -1,19 +1,32 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "82210669"
+  name: "82210669" 
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: "82210669"
   template:
-    metadata:
-      labels:
-        app: "82210669"
     spec:
       containers:
         - name: "82210669" 
-          image: ce82210669acr.azurecr.io/82210669
-          ports:
-          - containerPort: 8080
+          command: ["java","-jar","/app.jar"]
+          args: ["--spring.config.location=file:/config/application.yml"]
+          volumeMounts:
+          - mountPath: /mnt/cloud-sample
+            name: "82210669-volume"
+            readOnly: false
+            subPath: cloud-sample
+          - mountPath: /config
+            name: application-properties
+            readOnly: true
+                          
+      volumes:
+      - name: "82210669-volume"
+        persistentVolumeClaim:
+          claimName: my-pvc
+      - name: application-properties
+        configMap:
+          name: "82161846-configmap"
+          items:
+            - key: application.yml
+              path: application.yml
+          defaultMode: 420
