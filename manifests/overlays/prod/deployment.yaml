@@ -22,10 +22,10 @@ spec:
       volumes:
       - name: "82210669-volume"
         persistentVolumeClaim:
-          claimName: my-pvc
+          claimName: my-app-pvc
       - name: application-properties
         configMap:
-          name: "82161846-configmap"
+          name: "82210669-configmap"
           items:
             - key: application.yml
               path: application.yml
