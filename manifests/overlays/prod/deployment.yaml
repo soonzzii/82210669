@@ -1,26 +1,19 @@
-apiVersion: apps/v1
+apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
-  namespace: production
+  name: "82161846"
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: "82210669"
   template:
     metadata:
       labels:
-        app: my-app
+        app: "82210669"
     spec:
       containers:
-        - name: my-app-container
-          image: cepgbaseacr.azurecr.io/docker.io/openjdk:17-slim
+        - name: "82161846" 
+          image: ce82210669acr.azurecr.io/82210669
           ports:
-            - containerPort: 8080
-          env:
-            - name: DB_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: my-app-config
-                  key: db_url
+          - containerPort: 8080
