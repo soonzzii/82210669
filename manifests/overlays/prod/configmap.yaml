@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-app-config
+  name: 82210669-configmap
   namespace: 82210669-argocd
 data:
   db_url: "jdbc:postgresql://ce-82210669-postgres.postgres.database.azure.com:5432/postgres"
